@@ -1,8 +1,8 @@
 steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/test-project-393906/cicd:$SHORT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/test-project-393906/github.com/sridharreddy0428/cicd:$SHORT_SHA', '.']
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/test-project-393906/cicd:$SHORT_SHA']
+    args: ['push', 'gcr.io/test-project-393906/github.com/sridharreddy0428/cicd:$SHORT_SHA']
