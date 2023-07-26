@@ -8,4 +8,4 @@ steps:
   
   # Deploying to cloud-Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'test-project-393906', '--region=us-west2', '--platform=managed','--image=gcr.io/test-project-393906/cicd:tag1']
+  args: ['run', 'deploy', 'test-project-393906','--port', '8001', '--region=us-west2', '--platform=managed','--image=gcr.io/test-project-393906/cicd:tag1']
