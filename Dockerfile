@@ -1,5 +1,6 @@
-FROM node:13-slim
+FROM python:3.9
 WORKDIR /app
-ADD . /app
-CMD node server.js
+COPY . /app
+RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8010
+CMD [ "python","app.py" ]
