@@ -1,12 +1,12 @@
 steps:
 # Docker Build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/test-project-393906/cicd:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/test-project-393906/cicd:tag1', '.']
 
 # Docker Push
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/test-project-393906/cicd:$COMMIT_SHA']
+  args: ['push', 'gcr.io/test-project-393906/cicd:tag1']
   
   # Deploying to cloud-Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'test-project-393906','--port', '${_PORT_NO}', '--allow-unauthenticated', '--region=us-west2', '--platform=managed','--image=gcr.io/test-project-393906/cicd:$COMMIT_SHA']
+  args: ['run', 'deploy', 'test-project-393906','--port', '${_PORT_NO}', '--allow-unauthenticated', '--region=us-west2', '--platform=managed','--image=gcr.io/test-project-393906/cicd:tag1']
