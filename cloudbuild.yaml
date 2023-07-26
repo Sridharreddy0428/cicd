@@ -5,7 +5,7 @@ steps:
 
 # Docker Push
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/test-project-393906/cicd:SHORT_SHA']
+  args: ['push', 'gcr.io/test-project-393906/cicd:$SHORT_SHA']
   
   # Deploying to cloud-Run
 - name: 'gcr.io/cloud-builders/gcloud'
