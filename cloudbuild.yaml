@@ -1,7 +1,7 @@
 steps:
 # Docker Build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/test-project-393906/github.com/sridharreddy0428/cicd:494ee93', '.']
+  args: ['build', '-t', 'gcr.io/test-project-393906/github.com/sridharreddy0428/cicd:tag', '.']
 
 # Docker Push
 - name: 'gcr.io/cloud-builders/docker'
